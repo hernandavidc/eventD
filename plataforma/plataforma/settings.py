@@ -42,7 +42,7 @@ DJANGO_APPS = [
 
 
 LOCAL_APPS = [
-    'eventos',
+    'events',
     'pages',
 ]
 
