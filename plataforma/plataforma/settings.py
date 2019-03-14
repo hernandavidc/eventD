@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from os.path import normpath, join
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = 'r41&^d^!cq!hrwlb2$82fm95dd=1+hg7w)ywqu%3qjrf5kxdhj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,8 +43,11 @@ DJANGO_APPS = [
 
 
 LOCAL_APPS = [
+    'core',
     'events',
-    'pages',
+    'blog',
+    'profiles',
+    'registration',
 ]
 
 THIRD_PARTY_APPS = [
@@ -131,3 +135,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (normpath(join(BASE_DIR, 'static')),)
+
+#auth redirect
+LOGIN_REDIRECT_URL = 'profiles:inicio'
+LOGOUT_REDIRECT_URL = 'home'
+
+#Media Files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+else:
+    pass
+    EMAIL_HOST = ''
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_USE_SSL = False

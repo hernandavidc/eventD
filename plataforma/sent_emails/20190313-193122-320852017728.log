@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: hernandavidc@hotmail.com
+Date: Thu, 14 Mar 2019 00:31:22 -0000
+Message-ID: <155252348237.10300.12762043028398788564@flialvarez>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/reset/Mg/54l-017902b36b8b760e3d28/
+
+Your username, in case you've forgotten: hernandavidc
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
