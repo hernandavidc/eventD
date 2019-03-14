@@ -138,7 +138,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (normpath(join(BASE_DIR, 'static')),)
 
 #auth redirect
-LOGIN_REDIRECT_URL = 'profiles:inicio'
+LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 #Media Files
