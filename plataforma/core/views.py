@@ -1,10 +1,14 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
 
+from blog.models import Post
+from events.models import Event
+
 class HomePageView(TemplateView):
+    posts = Post.objects.all()[:3]
+    events = Event.objects.all()[:6]
 
-
-    contexto = {'title':"Events"}
+    contexto = {'title':"Events", 'posts':posts, 'events':events}
     template_name = "core/home.html"
 
     def get(self, request, *args, **kwargs):

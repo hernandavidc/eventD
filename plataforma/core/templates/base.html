@@ -12,6 +12,8 @@
     <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'core/css/main.css' %}" rel="stylesheet">
+    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+    {% block styles %}{% endblock %}
   </head>
   <body>
     <body>
@@ -36,19 +38,19 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'login' %}">Login</a>
                 </li>
-                
+                <li class="nav-item"><a class="nav-link" href="">/</a></li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'signup' %}">Registro</a>
+                    <a class="nav-link" href="{% url 'signup' %}">Signup</a>
                   </li> 
               {% else %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'profiles:list' %}">Perfiles</a>
+                  <a class="nav-link" href="{% url 'profiles:list' %}">Profiles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}">Perfil</a>
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'logout' %}">Salir</a>
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
               {% endif %}
             </ul>
@@ -58,9 +60,8 @@
       <!-- Contenido -->
       {% block content %}{% endblock %}
       <!-- Javascript -->
-      {% block Js %}{% endblock %}
-      <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <script src="{% static 'core/js/main.js' %}"></script>
+      {% block Js %}{% endblock %}
   </body>
 </html>

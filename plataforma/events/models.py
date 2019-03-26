@@ -19,10 +19,13 @@ class Event(models.Model):
     name = models.CharField(max_length=200,blank=False, null=False)
     description = models.TextField(null=True, blank=True)
     date = models.DateField(blank=False, null=False)
-    urlMaps = models.URLField(max_length=200,blank=True, null=True)
-    urlPay = models.URLField(max_length=200,blank=True, null=True)
+    urlMaps = models.URLField(max_length=500,blank=True, null=True)
+    urlPay = models.URLField(max_length=500,blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return str(self.id) + " " + self.name + "-" + self.user.username
 
 class Invitation(models.Model):
     user = models.ForeignKey(User, related_name="get_invitations", on_delete=models.PROTECT)
