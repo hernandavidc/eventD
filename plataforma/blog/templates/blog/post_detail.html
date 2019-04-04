@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{post.title}}{% endblock %}
+{% block content %}
+<!-- Page Header -->
+<header class="masthead" {% if post.image %} style="background-size: cover;height: 500px;background-image: url('{{post.image.url}}')" {% endif %}>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto" style="border-radius: 10px;margin-top: 150px;background: #0000008c;color: #fff;padding: 50px;">
+        <div class="site-heading">
+          <h1>{{post.title}}</h1>
+          <span class="subheading">Published by <em><b>{{post.author}}</b></em> in
+            <em> 
+             {% for categoria in post.categories.all %}
+              <a href="{% url 'category' categoria.id %}" class="link">{{categoria.name}}</a>{% if not forloop.last %},{% endif %}
+             {% endfor %}
+            </em>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+ <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <div>
+          {{post.content|safe}}
+        </div>
+      </div>
+    </div>
+  </div>
+ {% endblock %}

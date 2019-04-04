@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{event.name}}{% endblock %}
+{% block content %}
+{% load random_event_bg %}
+<div class="album py-5">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card mb-4 shadow-sm">
+            {% if event.urlMaps %}
+              <iframe src="{{event.urlMaps}}" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            {% else %}
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            {% endif %}         
+            <div class="row">
+            <div class="col-md-5">
+              {% if event.image %}
+                <img src="{{event.image.url}}" width="100%" height="auto" alt="{{event.name}}">
+              {% else %}
+                <img src="{% random_bg_event %}" width="100%" height="auto" alt="{{event.name}}">
+              {% endif %}
+            </div>
+            <div class="col-md-7 card-body">
+                <h3>{{event.name}}</h3>
+                <p class="card-text"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{event.user.username}}</p>
+                <p class="card-text"><i class="fa fa-map-marker"></i> {{event.drctn}}</p>
+                <p class="card-text"><i class="fa fa-calendar"></i> {{event.date}}</p>
+              <p class="card-text">{{event.description|safe}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  {% if event.urlPay %}
+                    <a href="{{event.urlPay}}" target="_blank" class="btn btn-sm btn-outline-primary">Pay</a>
+                  {% endif %}
+                  {% if event.private and request.user %}
+                    <a href="{% url 'invitation_create' event.id %}" class=" {% if invi %}disabled{% endif %} btn btn-sm btn-outline-primary"  data-toggle="tooltip" data-placement="top" title="This event is private, to see extra information such as the address, you need to ask for an invitation">Invitation</a>
+                    
+                  {% endif %}
+                </div>
+                {% if invi %}<p>
+                    Invitation: 
+                      {% if invi.status == None %}
+                        <span class="text-primary">Pending
+                      {% elif invi.status %}
+                        <span class="text-success">Accepted
+                      {% else %}
+                        <span class="text-danger">Rejected
+                      {% endif %}
+                    </span>
+                </p>{% endif %}
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block Js %}
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+{% endblock %}

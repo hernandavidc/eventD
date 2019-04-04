@@ -11,183 +11,201 @@
 {% endblock %}
 {% block content %}
 <div class="home">
-		<div class="home_slider_container">
+	<div class="home_slider_container">
+		
+		<!-- Home Slider -->
+		<div class="owl-carousel owl-theme home_slider">
 			
-			<!-- Home Slider -->
-			<div class="owl-carousel owl-theme home_slider">
-				
-				<!-- Slide -->
-				<div class="owl-item">
-					<div class="background_image" style="background-image: url({% static 'images/index.jpg' %})"></div>
-					<div class="home_container">
-						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
-							<div class="home_content text-center">
-								<div class="home_subtitle">New single release</div>
-								<div class="home_title"><h1>Love is all around</h1></div>
-								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
-							</div>
+			<!-- Slide -->
+			<div class="owl-item">
+				<div class="background_image" style="background-image: url({% static 'images/index.jpg' %})"></div>
+				<div class="home_container">
+					<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
+						<div class="home_content text-center">
+							<div class="home_subtitle">New single release</div>
+							<div class="home_title"><h1>Love is all around</h1></div>
+							<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<!-- Slide -->
-				<div class="owl-item">
-					<div class="background_image" style="background-image: url({% static 'images/index.jpg' %})"></div>
-					<div class="home_container">
-						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
-							<div class="home_content text-center">
-								<div class="home_subtitle">New single release</div>
-								<div class="home_title"><h1>Love is all around</h1></div>
-								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
-							</div>
+			<!-- Slide -->
+			<div class="owl-item">
+				<div class="background_image" style="background-image: url({% static 'images/index.jpg' %})"></div>
+				<div class="home_container">
+					<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
+						<div class="home_content text-center">
+							<div class="home_subtitle">New single release</div>
+							<div class="home_title"><h1>Love is all around</h1></div>
+							<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<!-- Slide -->
-				<div class="owl-item">
-					<div class="background_image" style="background-image: url({% static 'images/index.jpg' %})"></div>
-					<div class="home_container">
-						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
-							<div class="home_content text-center">
-								<div class="home_subtitle">New single release</div>
-								<div class="home_title"><h1>Love is all around</h1></div>
-								<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
-							</div>
+			<!-- Slide -->
+			<div class="owl-item">
+				<div class="background_image" style="background-image: url({% static 'images/index.jpg' %})"></div>
+				<div class="home_container">
+					<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
+						<div class="home_content text-center">
+							<div class="home_subtitle">New single release</div>
+							<div class="home_title"><h1>Love is all around</h1></div>
+							<div class="home_link"><a href="#">Listen on Soundcloud</a></div>
 						</div>
 					</div>
 				</div>
+			</div>
 
+		</div>
+	</div>
+</div><!-- Featured Album -->
+
+<div class="featured_album">
+	<div class="background_image featured_background" style="background-image:url({% static 'images/featured.png' %})"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 offset-lg-6">
+				<div class="section_title_container">
+					<!-- <div class="section_subtitle">Events</div> -->
+					<div class="section_title"><h1>About us</h1></div>
+				</div>
 			</div>
 		</div>
-	</div><!-- Featured Album -->
+		<div class="row featured_row row-lg-eq-height">
 
-	<div class="featured_album">
-		<div class="background_image featured_background" style="background-image:url({% static 'images/featured.png' %})"></div>
+			<!-- Featured Album Image -->
+			<div class="col-md-6">
+				<div class="featured_album_image">
+					<div class="background_image" style="background-image:url({% static 'images/featured_album.jpg' %})"></div>
+					<!-- <img src="images/featured_album.jpg" alt=""> -->
+				</div>
+			</div>
+
+			<!-- Featured Album Player -->
+			<div class="col-md-6 featured_album_col">
+				<div class="featured_album_player_container d-flex flex-column align-items-start justify-content-center">
+					<div class="featured_album_player">
+						<div class="featured_album_title_bar d-flex flex-row align-items-center justify-content-start">
+							<div class="featured_album_title_container">
+								<div class="featured_album_artist">Proyect Name</div>
+								<div class="featured_album_title">We love what we do</div>
+							</div>
+							<div class="featured_album_link ml-auto"><a href="{% url 'event_list' %}">See the latest events</a></div>
+						</div>
+						<div id="jplayer_1" class="jp-jplayer"></div>
+						<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+							<div class="jp-type-playlist">
+								<p style="padding:0 25px 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat magna et lacus commodo pulvinar. Ut pretium, urna a egestas faucibus, est odio malesuada libero, at suscipit metus odio quis urna. Phasellus consequat nec eros lobortis sagittis. Sed nibh quam, luctus vitae tellus sed, vehicula volutpat orci. Etiam elementum, enim sit amet accumsan elementum, tortor nisi accumsan sem, sed suscipit est urna vitae ligula. Curabitur accumsan eleifend tincidunt. Maecenas sagittis pharetra risus ut sodales.
+<br>
+Pellentesque ullamcorper magna ut dapibus laoreet. Quisque ut mi ultrices, tincidunt erat sed, fermentum tellus. Integer ut sagittis mi, sed hendrerit purus. Nunc id diam vestibulum, lobortis purus quis, vestibulum erat. Vestibulum molestie urna eu massa tincidunt, eu bibendum lectus sagittis. Quisque massa ligula, hendrerit at enim vitae, dignissim porttitor risus. In non ultricies quam. Fusce ullamcorper nisi et diam rhoncus cursus. Integer non ante pellentesque, imperdiet ante eu, imperdiet libero. Morbi id congue quam. Cras diam dolor, interdum id enim sed, fermentum posuere dolor. Nulla eu pretium augue. Fusce ut egestas tortor. Nam elementum elementum dolor, non sollicitudin odio.</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<!-- preview eventes -->	
+
+<div class="shows">
+	<div class="container">
+		<div class="row" style="z-index:10;">
+			<div class="col">
+				<div class="section_title_container">
+					<div class="section_subtitle">Events</div>
+					<div class="section_title"><h1>Upcoming Shows</h1></div>
+				</div>
+			</div>
+		</div>
+		<div class="row shows_row">
+			
+			<!-- Shows List -->
+			<div class="col-lg-8 order-lg-1 order-2 shows_list_col">
+				<div class="shows_list_container">
+					<ul class="shows_list">
+			{% for event in events %}
+						<!-- Show -->
+						<li class="d-flex flex-row align-items-center justify-content-start">
+							<div><div class="show_date">{{event.date|date:"M/d"}}</div></div>
+							<div class="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
+								<div class="show_name"><a href="{% url 'event_detail' event.id %}">{{event.name}}</a></div>
+								<div class="show_location">{{event.city.name}}</div>
+							</div>
+							<div class="ml-auto"><div class="show_shop trans_200"><a href="{% url 'event_detail' event.id %}">Detail</a></div></div>
+						</li>
+			{% endfor %}
+					</ul>
+				</div>
+			</div>
+			<!-- Shows Image -->
+			<div class="col-lg-4 order-lg-2 order-1">
+				<div class="shows_image">
+					<img src="{% static 'images/shows.jpg' %}" alt="">
+				</div>
+			</div>
+
+		</div>
+		
+	</div>
+</div>
+<!-- Extra -->
+<div class="extra">
+	<div class="extra_container">
+		<div class="background_image" style="background-image:url({% static 'images/extra.jpg' %})"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 offset-lg-6">
-					<div class="section_title_container">
-						<!-- <div class="section_subtitle">Events</div> -->
-						<div class="section_title"><h1>About us</h1></div>
-					</div>
-				</div>
-			</div>
-			<div class="row featured_row row-lg-eq-height">
-
-				<!-- Featured Album Image -->
-				<div class="col-md-6">
-					<div class="featured_album_image">
-						<div class="background_image" style="background-image:url({% static 'images/featured_album.jpg' %})"></div>
-						<!-- <img src="images/featured_album.jpg" alt=""> -->
-					</div>
-				</div>
-
-				<!-- Featured Album Player -->
-				<div class="col-md-6 featured_album_col">
-					<div class="featured_album_player_container d-flex flex-column align-items-start justify-content-center">
-						<div class="featured_album_player">
-							<div class="featured_album_title_bar d-flex flex-row align-items-center justify-content-start">
-								<div class="featured_album_title_container">
-									<div class="featured_album_artist">Proyect Name</div>
-									<div class="featured_album_title">We love what we do</div>
-								</div>
-								<div class="featured_album_link ml-auto"><a href="#">See more events</a></div>
-							</div>
-							<div id="jplayer_1" class="jp-jplayer"></div>
-							<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-								<div class="jp-type-playlist">
-									<p style="padding:0 25px 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat magna et lacus commodo pulvinar. Ut pretium, urna a egestas faucibus, est odio malesuada libero, at suscipit metus odio quis urna. Phasellus consequat nec eros lobortis sagittis. Sed nibh quam, luctus vitae tellus sed, vehicula volutpat orci. Etiam elementum, enim sit amet accumsan elementum, tortor nisi accumsan sem, sed suscipit est urna vitae ligula. Curabitur accumsan eleifend tincidunt. Maecenas sagittis pharetra risus ut sodales.
- <br>
-Pellentesque ullamcorper magna ut dapibus laoreet. Quisque ut mi ultrices, tincidunt erat sed, fermentum tellus. Integer ut sagittis mi, sed hendrerit purus. Nunc id diam vestibulum, lobortis purus quis, vestibulum erat. Vestibulum molestie urna eu massa tincidunt, eu bibendum lectus sagittis. Quisque massa ligula, hendrerit at enim vitae, dignissim porttitor risus. In non ultricies quam. Fusce ullamcorper nisi et diam rhoncus cursus. Integer non ante pellentesque, imperdiet ante eu, imperdiet libero. Morbi id congue quam. Cras diam dolor, interdum id enim sed, fermentum posuere dolor. Nulla eu pretium augue. Fusce ut egestas tortor. Nam elementum elementum dolor, non sollicitudin odio.</p>
-								</div>
-							</div>
-
+				<div class="col-lg-9">
+					<div class="extra_content d-flex flex-column align-items-start justify-content-center">
+						<div class="extra_title"><h1>Enroll now!</h1></div>
+						<div class="extra_text">
+							<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum</p>
 						</div>
+						<div class="extra_button"><a href="{% url 'signup' %}">SIGNUP</a></div>
 					</div>
 				</div>
-
 			</div>
-		</div>
+		</div>		
 	</div>
-
-
-	<!-- preview eventes -->	
-
-  	<div class="shows">
-		<div class="container">
-			<div class="row" style="z-index:10;">
-				<div class="col">
-					<div class="section_title_container">
-						<div class="section_subtitle">Events</div>
-						<div class="section_title"><h1>Upcoming Shows</h1></div>
-					</div>
-				</div>
-			</div>
-			<div class="row shows_row">
-				
-				<!-- Shows List -->
-				<div class="col-lg-8 order-lg-1 order-2 shows_list_col">
-					<div class="shows_list_container">
-						<ul class="shows_list">
-              {% for event in events %}
-							<!-- Show -->
-							<li class="d-flex flex-row align-items-center justify-content-start">
-								<div><div class="show_date">{{event.date|date:"M/d"}}</div></div>
-								<div class="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-									<div class="show_name"><a href="#">{{event.name}}</a></div>
-									<div class="show_location">{{event.city.name}}</div>
-								</div>
-								<div class="ml-auto"><div class="show_shop trans_200"><a href="#">Detail</a></div></div>
-							</li>
-              {% endfor %}
-
-							<!-- Show -->
-							<li class="d-flex flex-row align-items-center justify-content-start">
-								<div><div class="show_date">25/08</div></div>
-								<div class="show_info d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-start justify-content-center">
-									<div class="show_name"><a href="#">Vikings Festival</a></div>
-									<div class="show_location">Oslo, Norway</div>
-								</div>
-								<div class="ml-auto"><div class="show_shop trans_200"><a href="#">Buy Tickets</a></div></div>
-							</li>
-
-						</ul>
-					</div>
-				</div>
-
-				<!-- Shows Image -->
-				<div class="col-lg-4 order-lg-2 order-1">
-					<div class="shows_image">
-						<img src="{% static 'images/shows.jpg' %}" alt="">
-					</div>
-				</div>
-
-			</div>
-			
+</div>
+<!-- blog -->
+<div style="padding-top:25px; background:url('https://www.toptal.com/designers/subtlepatterns/patterns/what-the-hex-dark.png') repeat;">
+  <div class="container">
+	<h2 style="text-align:center;margin:45px 0 35px;">What's new in our blog?</h2>
+  <div class="row mb-2">
+  	{% for post in posts %}
+    <div class="col-md-4 col-sm-6">
+      <div style="background: black;" class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">
+		  {% for category in post.categories.all %}
+		  	{{category.name}}
+		  {% endfor %}
+		  </strong>
+          <h3 class="mb-0">{{post.title|truncatechars:"28"}}</h3>
+          <div class="mb-1 text-muted">{{post.date|date:"M d"}}</div>
+          <p class="card-text mb-auto">{{post.content|striptags|safe|truncatechars:"70"}}</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+		{% if post.image.url %}
+            <img  width="150" style="height: 100%;" class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{post.image.url}}" alt="">
+		{% else %}
+          <svg class="bd-placeholder-img" width="200" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">We rock!</text></svg>
+        {% endif %}
 		</div>
-	</div>
-
-	<!-- Extra -->
-
-			<div class="extra">
-				<div class="extra_container">
-					<div class="background_image" style="background-image:url({% static 'images/extra.jpg' %})"></div>
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-9">
-								<div class="extra_content d-flex flex-column align-items-start justify-content-center">
-									<div class="extra_title"><h1>Enroll now!</h1></div>
-									<div class="extra_text">
-										<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum</p>
-									</div>
-									<div class="extra_button"><a href="{% url 'signup' %}">SIGNUP</a></div>
-								</div>
-							</div>
-						</div>
-					</div>		
-				</div>
-			</div>
+      </div>
+    </div>
+	{% endfor %}
+  </div>
+  </div>
+  </div>
 {% endblock %}
 {% block Js %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

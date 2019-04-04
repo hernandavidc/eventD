@@ -1,10 +1,6 @@
-main{
-    padding-top: 20px;
-}
-:root {
-    --jumbotron-padding-y: 3rem;
-}
-
+body{background-color: #EEEEEE}
+main{    padding-top: 20px;}
+:root {    --jumbotron-padding-y: 3rem;}
 .jumbotron {
     padding-top: var(--jumbotron-padding-y);
     padding-bottom: var(--jumbotron-padding-y);
@@ -17,28 +13,25 @@ main{
         padding-bottom: calc(var(--jumbotron-padding-y) * 2);
     }
 }
-
-.jumbotron p:last-child {
-    margin-bottom: 0;
+.jumbotron p:last-child {    margin-bottom: 0;}
+.jumbotron-heading {    font-weight: 300;}
+.jumbotron .container {max-width: 40rem;}
+footer {    padding-top: 3rem;    padding-bottom: 3rem;}
+footer p {    margin-bottom: .25rem;}
+.box-shadow {box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);}
+.srchnav{   
+    margin-top: -55px;
+    padding: 10px;
+    background: #373737;
+    border: 2px solid #150909;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 12px 20px -10px rgba(41, 21, 21, 0.2),0 4px 20px 0 rgba(0,0,0,.12),0 7px 8px -5px rgba(41, 21, 21, 0.2)!important;
+    box-shadow: 0 12px 20px -10px rgba(41, 21, 21, 0.2),0 4px 20px 0 rgba(0,0,0,.12),0 7px 8px -5px rgba(41, 21, 21, 0.2)!important;
 }
-
-.jumbotron-heading {
-    font-weight: 300;
+.container-events{    padding-top: 20px;
+    margin-top: 70px;
+    border: 1px solid #adadad;
+    border-radius: 10px;
+    background-color: #fff;
 }
-
-.jumbotron .container {
-max-width: 40rem;
-}
-
-footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-footer p {
-    margin-bottom: .25rem;
-}
-
-.box-shadow { 
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); 
-}
+.event_list{margin-top: 25px;}

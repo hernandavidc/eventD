@@ -5,9 +5,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('core.urls')),
-    path('perfiles/', include(profiles_patterns)),
+    path('profiles/', include(profiles_patterns)),
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('', include('events.urls')),
     #Paths de Auth
     path('', include('django.contrib.auth.urls')),
     path('', include('registration.urls')),
