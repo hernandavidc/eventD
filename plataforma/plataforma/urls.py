@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from profiles.urls import profiles_patterns
+from messenger.urls import messenger_patterns
 from django.conf import settings
 
 urlpatterns = [
@@ -9,8 +10,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('', include('events.urls')),
+    path('messenger/', include(messenger_patterns)),
     #Paths de Auth
-    path('', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', include('registration.urls')),
 ]
 if settings.DEBUG:

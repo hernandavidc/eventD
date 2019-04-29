@@ -48,6 +48,7 @@ LOCAL_APPS = [
     'blog',
     'profiles',
     'registration',
+    'messenger',
 ]
 
 THIRD_PARTY_APPS = [

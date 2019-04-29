@@ -3,7 +3,7 @@ from .models import Event, Invitation, City
 
 class EventAdmin(admin.ModelAdmin):
     readonly_fields= ('created', 'updated')
-    ordering = ('created',)
+    ordering = ('-created',)
     search_fields = ('user', 'city', 'name')
     list_filter = ('user', 'city')
 

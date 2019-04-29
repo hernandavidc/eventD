@@ -5,8 +5,8 @@ from blog.models import Post
 from events.models import Event
 
 class HomePageView(TemplateView):
-    posts = Post.objects.all()[:5]
-    events = Event.objects.all()[:6]
+    posts = Post.objects.all()[:6]
+    events = Event.objects.all()[:5]
 
     contexto = {'title':"Events", 'posts':posts, 'events':events}
     template_name = "core/home.html"

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Perfil{% endblock %}
+{% block title %}Profile{% endblock %}
 {% block content %}
 <style>.errorlist{color:red;} label{display:none}</style>
 <main role="main">
@@ -20,8 +20,10 @@
             </div>
             <!-- Formulario -->
             <div class="col-md-10">
-              <h3>Perfil</h3>
+              <h3>Profile {{request.user.username}}</h3>
               <input type="file" name="avatar" class="form-control-file mt-3" id="id_avatar">
+              {{ form.name }}
+              {{ form.stateId }}
               {{ form.bio }}
               {{ form.link }}
               <input type="email" value='{{request.user.email}}' class="form-control mt-3" readonly>

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My events{% endblock %}
+{% block content %}
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-12 mx-auto mb-5">
+        <h2>My events</h2>
+        
+          <div class="container-events col-md-12">
+            <form action="" method="post"> {% csrf_token %}
+            <div class="form-row align-items-center srchnav">
+                <div class="col-sm-3 my-1">
+                <label class="sr-only" for="name">Event's name</label>
+                <input class="form-control" type="text" id="name" name="name" {% if name %}value="{{name}}"{% else %}value=""{% endif %} placeholder="Event's name" />
+                </div>
+                <div class="col-sm-3 my-1">
+                <label class="sr-only" for="city">Event's city</label>
+                    <select class="form-control" id="city" name="city">
+                        <option value="">By city</option>
+                        {% for city in cities %}
+                            <option value="{{city.id}}" {% if city.id == cityId %} selected {% endif %} >{{city.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-auto my-1">
+                <div class="form-check">
+                   <input class="form-control" type="date" id="date" name="date" {% if date %}value="{{date}}"{% else %}value=""{% endif %} placeholder="AAAA-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+                </div>
+                </div>
+                <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary">Filter</button>
+                </div>
+            </div>
+            </form>
+
+            <div class="event_list">
+            {% if event_list %}
+            <table class="table table-borderless table-data3">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Date</th>
+                        <th>Private</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for event in event_list %}
+                    <tr>
+                        <td>{{event.name}}</td>
+                        <td>{{event.city.name}}</td>
+                        <td>{{event.date}}</td>
+                        {% if event.private %}<td><i class="text-primary fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="This event is private, to see extra information such as the address, you need to ask for an invitation"></i>{%else%}<td class="text-success">No{% endif %}</td>
+                        <td>
+                            <div class="table-data-feature options">
+                                <a href="{% url 'event_detail' event.id %}" class="item" data-toggle="tooltip" data-placement="top" title="See">
+                                    <i class="text-secondary fa fa-eye"></i>
+                                </a>
+                                <a href="{% url 'event_update' event.id %}" class="item" data-toggle="tooltip" data-placement="top" title="Edit" data-original-title="Edit">
+                                    <i class="text-secondary fa fa-pencil"></i>
+                                </a>
+                                <a href="" class="item" data-toggle="tooltip" data-placement="top" title="Delete" data-original-title="Delete">
+                                    <i class="text-secondary fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+              <p style="text-align:center;"><img src="{% static 'images/not_found.jpg' %}" alt=""><br>No tienes eventos</p>
+            {% endif %}
+            </div>
+            </div>
+          </div>
+           <a href="{% url 'event_add' %}" class="plus-a"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block Js %}
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+{% endblock %}

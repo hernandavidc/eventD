@@ -6,6 +6,11 @@
 <main role="main">
   <div class="container">
     <div class="row mt-3">
+    {%if not request.user.profile.name %}
+      <div class="alert alert-info" role="alert">
+        <p>Remember to complete your basic information in <a href="{% url 'profile' %}"> the profile</a>, this is displayed when you make an invitation to participate in a private event</p>
+      </div>
+    {% endif %}
       <div class="col-md-12 mx-auto mb-5">
         <h2>Latest events</h2>
         
@@ -51,9 +56,9 @@
                 <div class="col p-4 d-flex flex-column position-static">
                   <strong class="d-inline-block mb-2">{{event.city.name}}</strong>
                   <a href="{% url 'event_detail' event.id %}"><h3 class="mb-0">{{event.name}}
-                      {% if event.private %}<i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="This event is private, to see extra information such as the address, you need to ask for an invitation"></i>{% endif %}</h3> </a>
+                    {% if event.private %}<i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="This event is private, to see extra information such as the address, you need to ask for an invitation"></i>{% endif %}</h3> </a>
                   <div class="mb-1 text-muted">{{event.user}} - <b>{{event.date}}</b></div>
-                  <p class="card-text mb-auto">{{event.description|truncatechars:"450"}}</p>
+                  <p class="card-text mb-auto">{{event.description|truncatechars:"450"|safe}}</p>
                   <a href="{% url 'event_detail' event.id %}" class="stretched-link">See more</a>
                 </div>
               </div>
@@ -65,7 +70,7 @@
             </div>
             </div>
           </div>
-          
+           <a href="{% url 'event_add' %}" class="plus-a"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         <!-- Menú de paginación -->
         {% if is_paginated %}
         <nav aria-label="Page navigation">

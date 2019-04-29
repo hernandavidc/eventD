@@ -46,6 +46,15 @@
                     <a class="nav-link" href="{% url 'signup' %}">Signup</a>
                   </li> 
               {% else %}
+                <li class="nav-item" style="position: relative;">
+                  <a href="{% url 'invitation_list' %}" class="nav-link {% if request.user.profile.notif %} working{% endif %}">Requests</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'myevent_list' %}">My events</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'messenger:list' %}">Messages</a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'profiles:list' %}">Profiles</a>
                 </li>
